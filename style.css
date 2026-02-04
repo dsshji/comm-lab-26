@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+h1 {
+    color: green;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    position: relative;
+    /*bottom: 1em; / top: 1em; -- moves up/down RELATIVE (as in position) to its original position*/
+    background-color: rgb(188, 144, 230);
+
+    /* positions: 
+    sticky -- combination of fixed and relative -- works in the body only -- when scroll to it it's fixed, otherwise it's relative
+    relative -- relative to other objects and/or section
+    absolute -- absolute on the screen despite other objects
+    fixed -- fixed on the screen despite scrolling
+
+    z-index to set what's on top and what's under
+    */
+
+}
+
+p {
+    background-color:rgb(168, 235, 213);
+    border: 2px dashed rgb(255, 255, 255);
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main {
+    background-color: rgb(172, 215, 255);
+}
