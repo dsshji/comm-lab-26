@@ -1,0 +1,219 @@
+/* colors for the website */
+:root{
+  --midnight: #1C2E4A;
+  --dusty: #52677D;
+  --ivory: #BDC4D4;
+  --deepnavy: #0F1A2B;
+  --buttercream: #D1CFC9;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: whitesmoke;
+  background: linear-gradient(135deg, var(--deepnavy), var(--midnight), var(--dusty));
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.app{
+  display:grid;
+  grid-template-columns: 130px 1fr;
+  min-height:100vh;
+  padding:24px;
+  gap:20px;
+}
+
+/* Left menu tabs */
+.tabs{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-top:40px;
+}
+
+.tab{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  border:1px solid var(--ivory);
+  border-radius:0 12px 12px 0;
+  background: rgba(15,26,43,0.75);
+  color: var(--ivory);
+  padding:14px 8px;
+  cursor:pointer;
+  transition: transform .2s ease, background .2s ease; /* from GEMINI */
+  min-height:200px;
+}
+
+.tab:hover{ transform: rotate(180deg) translateY(-4px); }
+
+.tab.active{
+  background: var(--dusty);
+  color: white;
+  border-color: white;
+}
+
+/* Main card */
+.card{
+  border:1px solid rgba(189,196,212,.5);
+  border-radius:16px;
+  background: rgba(15,26,43,0.70);
+  padding:28px;
+  overflow:auto;
+  max-height: calc(100vh - 48px);
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.intro {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+p{
+  line-height:1.6;
+  color: #e3e7ef;
+}
+
+/* To put the video and text side by side */
+.video-split {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 20px; /* Adds space between the top text and video */
+}
+
+.video-text {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Ensure the video takes up more space */
+.video-split video {
+  flex: 2;
+  width: 60%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Grid Layout for 4 Big Cards */
+.people-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  grid-template-rows: 200px 250px; /* Fixed height for big squares */
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* The Card Container */
+.person-card {
+  background-color: transparent;
+  perspective: 1000px; /* for 3D effect: from GEMINI */
+  cursor: pointer;
+}
+
+/* The Inner Wrapper */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s; /* time for the transition */
+  transform-style: preserve-3d; /* for object to stay in the 3D space as the card with 1000px perspective */
+}
+
+/* The Javascript adds this class to flip it */
+.person-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border: 1px solid var(--ivory);
+}
+
+/* Front Face Style */
+.card-front {
+  background: rgba(15, 26, 43, 0.9);
+  color: var(--ivory);
+}
+
+.card-front h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.designation {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dusty);
+}
+
+/* Back Face Style */
+.card-back {
+  background: var(--dusty);
+  color: var(--deepnavy);
+  transform: rotateY(180deg);
+}
+
+.card-back h3 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--deepnavy);
+  padding-bottom: 5px;
+}
+
+.card-back p {
+  color: var(--deepnavy);
+  margin: 5px 0;
+}
+
+.card-back .bio {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.data-log {
+  margin-top: 40px;
+  border-top: 1px solid var(--dusty);
+  padding-top: 20px;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+th {
+  color: var(--dusty);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}

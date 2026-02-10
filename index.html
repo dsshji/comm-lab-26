@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case File: Missing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+  <!--the main window where all the content is displayed-->
+    <aside class="tabs">
+      <button class="tab" data-target="clues">Clues</button>
+      <button class="tab" data-target="video">Case description</button> <!--data-target for js manipulation -- searched up in google-->
+      <button class="tab" data-target="people">Related people</button>
+    </aside> <!--to set the menu to the side of the main window-->
+
+    <main class="card">
+      <!--start with a home page as the active one-->
+      <section id="clues" class="page active">
+        <h1>Case File 001: Stuck in a loop</h1>
+        <p class = "intro">The case is classified. The subject is stuck in the loop that gets progressively weirder, and, as reported, more dangerous. Some passive threat detected in the behavior of the loop's anomalies. Some anomal behaviour has been recorded on surveillance. Attached files and list of participating faces in the case files. Further notice and instructions will be provided after careful examination of the case.</p>
+        <div class="data-log">
+        <h3>Loop Iteration Log</h3>
+        <!--show a table of interaction in the loop log for the style of the website-->
+        <table>
+          <tr>
+            <th>Iteration</th>
+            <th>Time Stamp</th>
+            <th>Variance</th>
+          </tr>
+          <tr>
+            <td>#001</td>
+            <td>2:25 PM</td>
+            <td>Normal</td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>2:50 PM</td>
+            <td>Repetetive behavior. Normal</td>
+          </tr>
+          <tr>
+            <td>#003</td>
+            <td>3:58 PM</td>
+            <td style="color:#faa171;">Unusual anomalies behavior</td>
+          </tr>
+          <tr>
+            <td>#004</td>
+            <td>4:44 PM</td>
+            <td style="color: #ff6b6b;">Subject Aggression</td>
+          </tr>
+        </table>
+      </div>
+      </section>
+
+      <section id="video" class="page">
+        <h2>Surveillance Recording</h2>
+        <p class = "intro">The attached file was derived from the surveillance cameras around the area the loop appeared. Some anomal behavior and the interaction between the subject and anomalies are displayed in the file. Classified.</p>
+        <!--select the class to have video and text adjusted to each other-->
+        <div class="video-split">
+          <div class="video-text">
+            <h3>Notes:</h3>
+            <p>
+              Important to note how details and the behavior of the objects inside the loop change throughout the recording.
+            </p>
+            <ul>
+              <li>Unusual body positions</li>
+              <li>Shifted attention focus to other items</li>
+              <li>Aggressive behavior (e.g. door knocking)</li>
+              <li>The victim's item possession</li>
+            </ul>
+          </div>
+
+          <video src="video.mp4" controls></video>
+          
+        </div>
+      </section>
+
+      <section id="people" class="page">
+        <h2>Related People</h2>
+        <p>Click on a personnel card to reveal classified details.</p>
+        <!--form a grid according to which the cards will be aligned-->
+        <div class="people-grid">
+          <!--start a card-->
+          <div class="person-card">
+            <div class="card-inner">
+              <!--describe a front side of the card-->
+              <div class="card-front">
+                <h3>Subject 001</h3>
+                <span class="designation">The Victim</span>
+              </div>
+              <!--describe a back side of the card-->
+              <div class="card-back">
+                <h3>Ruslan</h3>
+                <p><strong>Status:</strong> Stuck</p>
+                <p><strong>Last Seen:</strong> Art Center Hallway</p>
+                <p class="bio">Stuck in the loop that gets progressively weirder. No further information.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <h3>Subject 002</h3>
+                <span class="designation">The Witness</span>
+              </div>
+              <div class="card-back">
+                <h3>Mariam</h3>
+                <p><strong>Status:</strong> Not Specified</p>
+                <p><strong>Role:</strong> Spectator</p>
+                <p class="bio">Is reported to be in the loop and observe the action without any interference.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <h3>Unknown</h3>
+                <span class="designation">Anomaly</span>
+              </div>
+              <div class="card-back">
+                <h3>[daria]</h3>
+                <p><strong>Status:</strong> Active in the loop</p>
+                <p><strong>Origin:</strong> Unknown</p>
+                <p class="bio">One of the anomalies in the loop. No active threat detected but interaction with the victim is worrying.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <h3>Unknown</h3>
+                <span class="designation">Anomaly</span>
+              </div>
+              <div class="card-back">
+                <h3>[mohammad]</h3>
+                <p><strong>Status:</strong> Active in the loop</p>
+                <p><strong>Origin:</strong> Unknown</p>
+                <p class="bio">Another anomaly in the loop. No active threat detected, interaction with the victim is limited.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
